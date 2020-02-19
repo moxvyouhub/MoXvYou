@@ -2,20 +2,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.myapp.moxvyou">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
+        android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_my"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activities.WebViewActivity"></activity>
+        <activity android:name=".Activities.PullCallListContentReSolverActivity" />
+        <activity android:name=".Activities.CreateDatabaseActivity2" />
+        <activity android:name=".Activities.CreateDatabaseActivity" />
+
         <receiver
             android:name=".BroadcastUtils.ForceOfflineReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
         <activity android:name=".Activities.ForceOfflineActivity" />
         <activity android:name=".Activities.LoginActivity">

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 
 import com.myapp.moxvyou.BroadcastUtils.NetworkChangeReceiver;
@@ -47,9 +49,11 @@ public class HomeActivity extends BaseActivity {
         switch (item_id)
         {
             case R.id.bai_du:
-                Intent intent = new Intent("android.intent.action.VIEW");
-                intent.setData(Uri.parse("http://www.baidu.com"));
-                startActivity(intent);
+//                Intent intent = new Intent("android.intent.action.VIEW");
+//                intent.setData(Uri.parse("http://www.baidu.com"));
+//                startActivity(intent);
+                Intent intent1 = new Intent(HomeActivity.this,WebViewActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.next_page:
                 Intent intent2 = new Intent(HomeActivity.this,MenuNextPage1Activity.class);
@@ -86,6 +90,18 @@ public class HomeActivity extends BaseActivity {
             case R.id.force_offline:
                 Intent intent10 = new Intent(HomeActivity.this, ForceOfflineActivity.class);
                 startActivity(intent10);
+                break;
+            case R.id.create_database:
+                Intent intent11 = new Intent(HomeActivity.this, CreateDatabaseActivity.class);
+                startActivity(intent11);
+                break;
+            case R.id.create_database2:
+                Intent intent12 = new Intent(HomeActivity.this, CreateDatabaseActivity2.class);
+                startActivity(intent12);
+                break;
+            case R.id.call_list:
+                Intent intent13 = new Intent(HomeActivity.this, PullCallListContentReSolverActivity.class);
+                startActivity(intent13);
                 break;
         }
         return true;
